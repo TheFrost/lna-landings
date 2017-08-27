@@ -1,0 +1,176 @@
+.pw-section {
+  &--fresh {
+    background-color: $c-lynch;
+    padding: 5vh 0;
+    .pw-section__title {
+      @include bp(large-up) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.pw-features {
+  max-width: $base-size * 60;
+  margin-left: auto;
+  margin-right: auto;
+  @include bp(medium-up){
+    display: flex;
+    align-items: flex-start;
+    &__title {
+      font-size: 21px;
+    }
+    &__item {
+      width: calc(100% / 3);
+    }
+  }
+
+  &__item {
+    padding: $base-size $base-size * 2;
+    @include bp(large-up) {
+      padding: $base-size * 2;
+    }
+  }
+  &__title {
+    @include font-style($font-base, 18px, $c-periwinkle, 600, 1.5);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin: 0;
+    position: relative;
+    padding-top: $base-size * 6;
+    &:after {
+      display: block;
+      content: '';
+      @include size(76px, 76px);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &--fresh {
+      &:after {
+         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-fresco.svg') no-repeat center bottom;
+      background-size: contain;
+      }
+    }
+    &--soft {
+      &:after {
+         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-suave.svg') no-repeat center bottom;
+      background-size: contain;
+      }
+    }
+    &--autosize {
+      &:after {
+         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-adapta.svg') no-repeat center bottom;
+      background-size: contain;
+      }
+    }
+  }
+  &__text {
+    @include font-style($font-base, $base-size, white, normal);
+    letter-spacing: -0.1px;
+  }
+}
+
+.small-header {
+  position: relative;
+  perspective: 600px;
+  z-index: 2;
+  &__wrapper {
+    @include size(100%);
+    position: relative;
+    z-index: 5;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    perspective: 600px;
+    transform-origin: 50% 50%;
+    > img {
+      width: 360px;
+      margin: 0 auto;
+      @include bp(xlarge-up) {
+        width: auto;
+      }
+    }
+  }
+}
+
+
+$duration: 60s;
+$height: 10%;
+
+.pw-sky {
+  @include coverer;
+  height: 50vh;
+  overflow: hidden;
+  animation: fadeIn 3s ease-out;
+  user-select: none;
+  z-index: 0;
+
+  &__cloud {
+    position: absolute;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 70px;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-name: float, fadeFloat;
+    z-index: 1;
+    &--foreground {
+      height: $height;
+      min-height: 20px;
+      z-index: 3;
+      background-image: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-cloud.svg');
+    }
+    &--background {
+      height: $height / 1.1;
+      min-height: 8px;
+      animation-duration: $duration * 1.75;
+      background-image: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-cloud-light.svg');
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1 }
+}
+
+@keyframes float {
+  from { transform: translateX(100%) translateZ(0); }
+  to { transform: translateX(-50%) translateZ(0); }
+}
+
+@keyframes fadeFloat {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: 1; }
+}
+
+@for $i from 10 through 1 {
+  $delay: (($duration / 6.5 ) * -1);
+  $top: ($i * 6) * 1%;
+
+  .pw-sky__cloud {
+    &:nth-child(#{$i}) {
+      animation-delay: $delay * $i;
+      top: $top;
+    }
+
+    &--foreground {
+      &:nth-child(#{$i}) {
+        animation-duration: ($duration - ($i * 4));
+        height: ($height + ($i * 2.5));
+      }
+    }
+
+    &--background {
+      &:nth-child(#{$i}) {
+        animation-duration: ($duration * 1.25 - ($i * 4));
+        height: (($height / 1.1) - ($i * 1.25))
+      }
+    }
+  }
+}
+

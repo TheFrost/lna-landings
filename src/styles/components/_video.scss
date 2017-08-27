@@ -1,0 +1,61 @@
+.pw-media {
+  position: relative;
+  @include responsive-ratio(16, 9);
+  &.--js-playing {
+    .pw-media {
+      &__play,
+      &__title {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &__poster {
+        background: transparent;
+      }
+    }
+  }
+
+  &__title {
+     @include font-style($font-base, 14px, white, bold, 1);
+     margin-top: 0;
+      letter-spacing: 0.5px;
+     text-transform: uppercase;
+  }
+
+  &__play {
+    display: inline-block;
+    @include size($base-size * 3);
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-play-video.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 1;
+    visibility: visible;
+    transition: all 250ms ease-in;
+    z-index: 10;
+  }
+  &__poster,
+  &__video {
+    @include coverer;
+  }
+  &__poster {
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-video-poster.jpg') no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 2;
+    &__va {
+      @include centerer;
+      text-align: center;
+      color: white;
+    }
+  }
+  &__video {
+    z-index: 0;
+  }
+
+  @include bp(medium-up) {
+    &__title {
+      font-size: 28px;
+    }
+    &__play {
+      @include size($base-size * 5);
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@include font-face('Proxima Nova', '#{$static-url}fonts/ProximaNova-Bold', bold, normal);
+@include font-face('Proxima Nova', '#{$static-url}fonts/ProximaNova-SemiBold', 600, normal);
+@include font-face('Proxima Nova', '#{$static-url}fonts/ProximaNova-Regular', normal, normal);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.u-img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.u-list-unstyled {
+  @include clean;
+  list-style: none;
+}
+
+.pw-wrapper {
+  position: relative;
+  @include size(100%);
+  min-height: 100%;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  a {
+    text-decoration: inherit;
+    &:hover {
+      text-decoration: inherit;
+    }
+  }
+}
+
+.pw-section {
+  @include size(100%, auto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @include bp(large-up){
+    min-height: 100vh;
+  }
+  &__inner {
+    position: relative;
+    padding: 0 $base-size;
+    @include clearfix;
+  }
+  &__title {
+    @include font-style($font-base, 18px, white, bold, 1.07);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: $base-size 0;
+
+    &--alternate {
+      color: $c-lynch;
+    }
+
+    @include bp(medium-up) {
+      font-size: 28px;
+      margin: $base-size * 2 0;
+    }
+    @include bp(xlarge-up) {
+      margin-bottom: $base-size * 3;
+    }
+  }
+
+  &__text {
+    @include font-style($font-base, 18px, $c-lynch-light, normal);
+  }
+}
+

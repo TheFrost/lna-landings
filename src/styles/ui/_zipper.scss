@@ -1,0 +1,25 @@
+.zipper {
+  position: relative;
+  width: $base-size * 20;
+  @include center-block;
+  @include bp(xlarge-up){
+    margin-top: $base-size * 2;
+  }
+  &__thumb {
+    @include size(52px, 28px);
+    position: relative;
+    cursor: crosshair;
+    cursor: -webkit-grabbing;
+    background: transparent url('../images/zipper-thumb.svg') no-repeat center center;
+    z-index: 2;
+  }
+
+  &__track {
+    position: absolute;
+    width: calc(100% - 16px);
+    border: 2px dashed $c-lynch;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}

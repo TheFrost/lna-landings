@@ -1,0 +1,178 @@
+.pw-section {
+  &--reveal {
+    background-color: $c-pollo-blue;
+  }
+  .pw-section__title {
+    @include bp(large-up) {
+      margin-top: 0;
+    }
+  }
+}
+.pw-webgl-mount {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  margin-top: -$base-size * 2;
+  @include bp(xlarge-up) {
+    margin-top: 0;
+  }
+  &:before {
+    content: '';
+    @include coverer;
+    top: $base-size * 4;
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pillow-shadow.png') no-repeat center bottom;
+    background-size: cover;
+  }
+  > canvas {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.pw-materials {
+  display: flex;
+  flex-direction: column;
+  background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-layers-mob.png') no-repeat;
+  background-position: 150px 50%;
+  background-size: contain;
+  padding: 5vh 0;
+  text-align: left;
+  @include bp(xsmall-up) {
+    background-position: 150% 50%;
+  }
+  @include bp(small-up) {
+    background-position: 120% 50%;
+    width: $base-size * 30;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  &__item {
+    display: flex;
+    border-bottom: 2px solid $c-lynch;
+    padding: $base-size;
+    &:last-child {
+      border: 0;
+    }
+  }
+  &__icon {
+    display: inline-block;
+    @include size($base-size * 3);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @include font-style($font-base, 14px, white, 600);
+    margin-left: $base-size;
+    margin-top: $base-size;
+  }
+
+  @include bp(large-up) {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 768px;
+    text-align: center;
+    background: none;
+    padding: 0;
+
+    &__item {
+      border: 0;
+      padding: 0 $base-size * 2;
+      vertical-align: middle;
+    }
+    &__icon {
+      @include size($base-size * 5);
+    }
+    &__title {
+      margin-left: $base-size/2;
+      margin-bottom: 0;
+      @include font-style($font-base, 18px, white, 600, 1.04);
+      letter-spacing: 0.3px;
+    }
+  }
+
+  &__icon {
+    &--foam {
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-foam.svg') no-repeat center center;
+      background-size: contain;
+    }
+    &--cover {
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-cover.svg') no-repeat center center;
+      background-size: contain;
+    }
+    &--bambu {
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-bambu.svg') no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+.pw-hotspot {
+  display: none;
+  @include bp(large-up) {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    @include size(171px, 113px);
+  }
+  &:after {
+    content: 'cierre de funda principal';
+    display: block;
+    position: absolute;
+    bottom: -$base-size * 2.5;
+
+    @include font-style($font-base, 14px, white, normal, 1.04);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+  &--left {
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-zipper-left.svg') no-repeat center center;
+    background-size: contain;
+    bottom: $base-size * 3;
+    left: -$base-size * 5;
+    &:after {
+      content: 'cierre de funda interna'
+    }
+  }
+  &--right {
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-zipper-right.svg') no-repeat center center;
+    background-size: contain;
+    top: $base-size * 5;
+    right: -$base-size * 4;
+    &:after {
+      width: 160px;
+      right: -$base-size * 2;
+    }
+  }
+}
+
+.pw-zipper {
+  display: none;
+  @include bp(large-up) {
+    display: block;
+    position: relative;
+    width: $base-size * 20;
+    @include center-block;
+  }
+  @include bp(xlarge-up){
+    margin-top: $base-size * 2;
+  }
+  &__thumb {
+    @include size(52px, 28px);
+    position: relative;
+    cursor: crosshair;
+    cursor: -webkit-grabbing;
+    background: transparent url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/zipper-thumb.svg') no-repeat center center;
+    z-index: 2;
+  }
+
+  &__track {
+    position: absolute;
+    width: calc(100% - 16px);
+    border: 2px dashed $c-lynch;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "airmont-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:dist": "postcss --use cssnano --output public/build/app.min.css public/styles/main.css --no-map",
+    "uglify:dist": "uglifyjs public/scripts/*.js -m -o public/build/app.js",
+    "uglify": "npm run uglify:dist",
+    "lint-scripts": "eslint src/scripts/ --fix; exit 0",
+    "watch-scripts": "watchify src/scripts/main.js -v -t [ babelify --presets [ es2015 ] ] -o public/scripts/bundle.js",
+    "build-styles": "node-sass --include-path scss src/styles/main.scss public/styles/main.css",
+    "prefix-styles": "postcss public/styles/*.css --use autoprefixer -d public/styles/ --no-map",
+    "watch-styles": "nodemon -e scss -x  \"npm run build-styles\"",
+    "server": "cd public; http-server",
+    "start": "concurrently --kill-others \"npm run watch-styles\" \"npm run watch-scripts\""
+  },
+  "browserslist": [
+    "last 2 version",
+    "ie 9"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "http-server": "^0.10.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "postcss-cli": "^4.1.0",
+    "uglify-js": "^3.0.27",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "classlist": "^1.0.1",
+    "offset": "0.0.1",
+    "pixi.js": "^4.5.4",
+    "prefix": "^1.0.0",
+    "tabs": "^0.2.0"
+  }
+}

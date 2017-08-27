@@ -1,0 +1,53 @@
+.pw-section {
+  &--certified {
+    background-color: $c-zircon;
+    min-height: auto;
+    padding: 5vh 0;
+    .pw-section__inner {
+      padding: 0 5vh;
+    }
+  }
+  &__title {
+    &--certified {
+      position: relative;
+      padding-top: $base-size * 4;
+      &:after {
+        display: block;
+        content: '';
+        @include size(40px, 48px);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-luna.svg') no-repeat center top;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.pw-certipur {
+  text-align: center;
+  padding: 5vh 0;
+  @include bp(medium-up) {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+  &__col {
+    &--right {
+      padding: $base-size * 1.5 0;
+      @include bp(medium-up) {
+        text-align: left;
+        padding: 0 $base-size * 1.5;
+      }
+    }
+  }
+  &__title {
+    @include font-style($font-base, 18px, $c-lynch, normal);
+    margin: 0;
+  }
+  .pw-section__text {
+    font-size: 16px;
+  }
+}
