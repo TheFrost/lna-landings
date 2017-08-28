@@ -146,6 +146,7 @@ $mix-percent-default: 15% !default;
 // Inspiration: http://www.sitepoint.com/managing-responsive-breakpoints-sass/
 // ---------------------------------------------------------------------------
 $breakpoints: (
+	"landscape":	"(min-device-width: 320px) and (max-device-width: 767px) and (orientation: landscape)",
 	"xxlarge":	"(min-width: #{$breakpoint-xlarge-default + $onepx})",
 	"xlarge-only":	"(min-width: #{$breakpoint-large-default + $onepx}) and (max-width: #{$breakpoint-xlarge-default})",
 	"xlarge-up":	"(min-width: #{$breakpoint-large-default + $onepx})",

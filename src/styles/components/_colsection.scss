@@ -56,6 +56,11 @@
       height: calc(100vh - #{$base-size * 2});
     }
   }
+  &__fig {
+    @include bp(landscape) {
+      width: 100px;
+    }
+  }
   &__copy {
      @include font-style($font-base, $base-size * 1.5, $c-lynch, bold);
      max-width: 320px;
@@ -69,6 +74,10 @@
     border: 1px solid $c-lynch;
     background-color: white;
     transition: all 250ms ease-in;
+
+    @include bp(landscape) {
+      margin-top: 0;
+    }
 
     &:hover,
     &.active {
