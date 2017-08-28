@@ -1,11 +1,15 @@
 import tabs from 'tabs';
 import browser from './utils/browser';
+import Reveal from './ui/reveal';
 import VideoPlayer from './ui/video-player';
 import Matress from './ui/Matress';
+import Header3d from './ui/header3d';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!browser.isDevice()) {
+    const reveal = new Reveal();
+    const header3D = new Header3d();
     const matressInView = new Matress();
   }
 
