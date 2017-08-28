@@ -67,8 +67,12 @@ body {
   }
   &__inner {
     position: relative;
-    padding: 0 $base-size;
-    @include clearfix;
+    padding: $base-size * 2 $base-size;
+		@include clearfix;
+		
+		@include bp(medium-up) {
+      padding: $base-size * 4 $base-size;
+    }
   }
   &__title {
     @include font-style($font-base, 18px, white, bold, 1.07);

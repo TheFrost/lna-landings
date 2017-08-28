@@ -1,16 +1,16 @@
 .pw-section {
   &--layers {
-		background: url(../images/capas-mobile.png) no-repeat -100px 30px $c-pollo-blue;
-		background-size: auto 100%;
+		background: url(../images/capas-mobile.png) no-repeat -100px 68px $c-pollo-blue;
+		background-size: auto calc(100% - 64px);
 
 		@include bp(xsmall-up) {
-			background: url(../images/capas-mobile.png) no-repeat -60px 30px $c-pollo-blue;
-			background-size: auto 100%;
+			background: url(../images/capas-mobile.png) no-repeat -60px 68px $c-pollo-blue;
+			background-size: auto calc(100% - 64px);
 		}
 
 		@include bp(min, $breakpoint-small-default) {
-			background: url(../images/capas-mobile.png) no-repeat 0 30px $c-pollo-blue;
-			background-size: auto 100%;
+			background: url(../images/capas-mobile.png) no-repeat 0 68px $c-pollo-blue;
+			background-size: auto calc(100% - 64px);
 		}
 
 		@include bp(medium-up) {
