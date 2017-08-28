@@ -34,10 +34,10 @@ export default class Matress extends EventEmitter {
       }],
     };
 
+
+
     this.domNode = document.querySelector(this.vars.selector);
     this.lines = document.querySelector(`${this.vars.selector}__lines`);
-
-    console.log(this.lines);
 
     if (!this.domNode) {
       return;
@@ -51,15 +51,16 @@ export default class Matress extends EventEmitter {
       transparent: true,
     });
 
+    this.domNode.appendChild(this.app.view);
+
     this.app.stop();
 
-    this.domNode.appendChild(this.app.view);
 
     this.layers = new PIXI.Container();
     this.app.stage.addChild(this.layers);
 
     this.loadAssets();
-    
+
   }
 
   loadAssets() {
@@ -100,7 +101,7 @@ export default class Matress extends EventEmitter {
   animate(direction) {
     const layers = this.layers.children;
     const key = direction ? 'to' : 'from';
-    
+
     const tweens = layers.map((sprite, index) => {
       const target = this.vars.positions[index][key];
       return charm.slide(sprite, 0, target);
@@ -116,13 +117,18 @@ export default class Matress extends EventEmitter {
   render() {
     this.bindEvents();
 
-    Object.keys(resources)
-      .map((img, i) => {
-        const sprite = new PIXI.Sprite(resources[img].texture);
-        const { from } = this.vars.positions[i];
-        sprite.position.set(0, from);
-        return this.layers.addChild(sprite);
-      });
+    const keys = Object.keys(resources)
+
+    // remove 2 assets loaded by ball animation
+    keys.splice(0, 1)
+    keys.splice(0, 1)
+
+    keys.map((img, i) => {
+      const sprite = new PIXI.Sprite(resources[img].texture);
+      const { from } = this.vars.positions[i];
+      sprite.position.set(0, from);
+      return this.layers.addChild(sprite);
+    });
 
     this.layers.x = (this.app.renderer.width - this.layers.width) / 2;
 

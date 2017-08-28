@@ -11,8 +11,6 @@ export default class VideoPlayer extends EventEmitter {
       eventType: ('touchstart' in window) ? 'touchstart' : 'click',
     };
 
-    console.log(this.vars);
-
     this.wrapper = document.querySelector('.pw-media');
 
     if (!this.wrapper) {
