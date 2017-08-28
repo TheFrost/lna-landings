@@ -59,11 +59,15 @@
     background-size: cover;
     cursor: pointer;
     z-index: 2;
+    &--matress {
+      background: url('../images/pw-video-matress.jpg') no-repeat center center;
+    }
     &__va {
       @include centerer;
       text-align: center;
       color: white;
     }
+
   }
   &__video {
     z-index: 0;
