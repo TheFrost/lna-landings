@@ -49,19 +49,37 @@
     }
     &--fresh {
       &:after {
-         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-fresco.svg') no-repeat center bottom;
-      background-size: contain;
+      	background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-fresco.svg') no-repeat center bottom;
+      	background-size: contain;
       }
     }
     &--soft {
       &:after {
-         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-suave.svg') no-repeat center bottom;
-      background-size: contain;
+      	background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-suave.svg') no-repeat center bottom;
+      	background-size: contain;
       }
     }
     &--autosize {
       &:after {
-         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-adapta.svg') no-repeat center bottom;
+      	background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-adapta.svg') no-repeat center bottom;
+      	background-size: contain;
+      }
+    }
+    &--balance {
+      &:after {
+      	background: url('../images/balance.svg') no-repeat center bottom;
+      	background-size: contain;
+      }
+    }
+    &--materials {
+      &:after {
+      	background: url('../images/capas.svg') no-repeat center bottom;
+      	background-size: contain;
+      }
+    }
+    &--qualify {
+      &:after {
+         background: url('../images/resenas.svg') no-repeat center bottom;
       background-size: contain;
       }
     }

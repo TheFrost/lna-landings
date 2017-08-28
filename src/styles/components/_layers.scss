@@ -46,7 +46,20 @@
     @include bp(medium-up) {
       flex-direction: column;
     }
-  }
+	}
+	
+	&__madein {
+		display: inline-block;
+		margin: $base-size * 2 0;
+
+		@include bp(large-up){
+			position: absolute;
+			left: -100px;
+			top: 50%;
+			width: 100px;
+			margin-top: -50px;
+		}
+	}
 }
 
 .pw-matress-webgl {
