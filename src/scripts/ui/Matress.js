@@ -1,6 +1,7 @@
 import { EventEmitter } from 'events';
 import * as PIXI from 'pixi.js';
 import inView from 'in-view';
+import classnames from 'classnames';
 import Charm from '../utils/charm';
 
 const loader = PIXI.loader;
@@ -17,7 +18,7 @@ export default class Matress extends EventEmitter {
     };
 
     this.vars = {
-      selector: '#pw-matress-webgl',
+      selector: '.pw-matress-webgl',
       positions: [{
         from: 210,
         to: 210,
@@ -34,6 +35,9 @@ export default class Matress extends EventEmitter {
     };
 
     this.domNode = document.querySelector(this.vars.selector);
+    this.lines = document.querySelector(`${this.vars.selector}__lines`);
+
+    console.log(this.lines);
 
     if (!this.domNode) {
       return;
@@ -55,7 +59,7 @@ export default class Matress extends EventEmitter {
     this.app.stage.addChild(this.layers);
 
     this.loadAssets();
-    this.bindEvents();
+    
   }
 
   loadAssets() {
@@ -71,7 +75,8 @@ export default class Matress extends EventEmitter {
     this.onTick = this.onTick.bind(this);
 
     inView.offset({
-      top: 100
+      top: 100,
+      bottom: 100
     })
     inView(this.getSelector())
       .on('enter', el => {
@@ -96,14 +101,21 @@ export default class Matress extends EventEmitter {
     const layers = this.layers.children;
     const key = direction ? 'to' : 'from';
     
-    layers.forEach((sprite, index) => {
+    const tweens = layers.map((sprite, index) => {
       const target = this.vars.positions[index][key];
-      charm.slide(sprite, 0, target);
-    });
-    return;
+      return charm.slide(sprite, 0, target);
+    })
+
+    tweens[layers.length - 1].onComplete = () => {
+      const lines = classnames('pw-matress-webgl__lines', { [key]: true });
+      this.lines.className = `${lines}`;
+    }
+
   }
 
   render() {
+    this.bindEvents();
+
     Object.keys(resources)
       .map((img, i) => {
         const sprite = new PIXI.Sprite(resources[img].texture);

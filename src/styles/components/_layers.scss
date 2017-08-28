@@ -11,7 +11,8 @@
       text-align: left;
 
       @include bp(medium-up) {
-        width: auto;
+        max-width: 768px;
+        width: 100%;
         text-align: center;
       }
 
@@ -44,6 +45,53 @@
 
     @include bp(medium-up) {
       flex-direction: column;
+    }
+  }
+}
+
+.pw-matress-webgl {
+  position: relative;
+  > canvas { 
+    position: relative;
+    z-index: 1;
+  }
+
+  &__lines {
+    @include coverer;
+    transform: translateY(5vh);
+    z-index: 2;
+    background: url('../images/icn-line-gel.svg') no-repeat center bottom;
+    opacity: 0;
+    visibility: hidden;
+    transition: 350ms ease-in-out;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      bottom: 0;
+    }
+    &:before {
+      left: 116px;
+      height: 307px;
+      background: url('../images/icn-line-latex.svg') no-repeat;
+    }
+    &:after {
+      right: 116px;
+      height: 166px;
+      background: url('../images/icn-line-pol.svg') no-repeat;
+    }
+
+    &.from {
+      opacity: 0;
+      visibility: hidden;
+    transform: translateY(5vh);
+      
+    }
+    &.to {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(3vh);
     }
   }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="231px" viewBox="0 0 22 231" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>indicador</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-413.000000, -257.000000)" stroke="#5D6E8A" stroke-width="1.8">
+            <g id="indicador" transform="translate(414.000000, 258.000000)">
+                <ellipse id="Oval-2-Copy" cx="9.76271186" cy="222.247126" rx="6.76271186" ry="6.75287356"></ellipse>
+                <path d="M10.2135593,11.5 L10.2135593,215.5" id="Line" stroke-linecap="square"></path>
+                <circle id="Oval-2" fill="#FFFFFF" fill-rule="nonzero" cx="10" cy="10" r="10"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
