@@ -63,7 +63,8 @@
   }
   &__copy {
      @include font-style($font-base, $base-size * 1.5, $c-lynch, bold);
-     max-width: 320px;
+		 max-width: 320px;
+		 text-transform: uppercase;
   }
   &__cta {
     display: inline-block;

@@ -25,6 +25,10 @@ body {
   text-transform: uppercase;
 }
 
+.u-font-regular {
+	font-weight: 400;
+}
+
 .u-desktop-only {
   display: none !important;
   
@@ -44,11 +48,6 @@ body {
   @include size(100%);
   min-height: 100%;
 
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   a {
     text-decoration: inherit;
     &:hover {
@@ -62,7 +61,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+	text-align: center;
   @include bp(large-up){
     min-height: 100vh;
   }
@@ -75,7 +74,8 @@ body {
     @include font-style($font-base, 18px, white, bold, 1.07);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin: $base-size 0;
+		margin: $base-size 0;
+		padding: 0 $base-size;
 
     &--alternate {
       color: $c-lynch;
@@ -93,7 +93,8 @@ body {
   &__intro {
     @include font-style($font-base, 18px, $c-periwinkle, normal);
     max-width: 600px;
-    margin: 0 auto;
+		margin: 0 auto;
+		padding: 0 $base-size;
   }
 
   &__text {
