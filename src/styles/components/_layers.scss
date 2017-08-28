@@ -1,0 +1,49 @@
+.pw-section {
+  &--layers {
+    background-color: $c-pollo-blue;
+
+    .small-header {
+      width: 50%;
+    }
+
+    .pw-features {
+      width: 50%;
+      text-align: left;
+
+      @include bp(medium-up) {
+        width: auto;
+        text-align: center;
+      }
+
+      &__item {
+        padding: 0;
+        margin: $base-size 0;
+
+        @include bp(medium-up) {
+          padding: $base-size * 2;
+          margin: 0;
+        }
+      }
+
+      &__text {
+        margin: 0;
+        @include bp(medium-up) {
+          margin: $base-size / 2 0;
+        }
+      }
+    }
+  }
+}
+
+
+.pw-layers {
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include bp(medium-up) {
+      flex-direction: column;
+    }
+  }
+}

@@ -29,8 +29,12 @@
     vertical-align: middle;
     cursor: pointer;
     transition: all 250ms ease-in;
-    padding: round($base-size / 1.25);
+    padding: $base-size / 2;
     @include font-style($font-base, 12px, $c-lynch, 600, 11px);
+
+    @include bp(medium-up) {
+      padding: round($base-size / 1.25);
+    }
 
     text-transform: uppercase;
     color: $c-lynch;

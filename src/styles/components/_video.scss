@@ -1,3 +1,22 @@
+.pw-section {
+  &--media {
+    display: block;
+    min-height: auto;
+
+    .pw-section__title {
+      margin-top: 0;
+
+      @include bp(medium-up) {
+        font-size: 28px;
+        margin-top: $base-size;
+      }
+      @include bp(xlarge-up) {
+        margin-top: $base-size * 2;
+      }
+    }
+  }
+}
+
 .pw-media {
   position: relative;
   @include responsive-ratio(16, 9);

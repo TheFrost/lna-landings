@@ -1,0 +1,79 @@
+.pw-section {
+  &--colsection {
+    padding: $base-size / 2;
+  }
+}
+
+.pw-colsection {
+  &--certified {
+    .pw-colsection {
+      &__item {
+        background-color: $c-zircon;
+
+        &--pic {
+          background: url('../images/bed-breakfast.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+  &--warranty {
+    .pw-colsection {
+      &__item {
+        background-color: $c-pale-pink;
+
+        &--pic {
+          background: url('../images/bed-dog.jpg') no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+  } 
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include bp(min, 1024px){
+      flex-direction: row;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(100vh - #{$base-size * 2});
+    padding: $base-size / 2;
+    margin: $base-size / 2;
+    @include bp(medium-up){
+      height: calc(50vh - #{$base-size * 2});
+    }
+    @include bp(min, 1024px){
+      width: 50%;
+      height: calc(100vh - #{$base-size * 2});
+    }
+  }
+  &__copy {
+     @include font-style($font-base, $base-size * 1.5, $c-lynch, bold);
+     max-width: 320px;
+  }
+  &__cta {
+    display: inline-block;
+    margin-top: $base-size * 2;
+    padding: $base-size * 0.9 $base-size * 2;
+    @include font-style($font-base, $base-size * 0.9, $c-lynch, normal);
+    text-transform: uppercase;
+    border: 1px solid $c-lynch;
+    background-color: white;
+    transition: all 250ms ease-in;
+
+    &:hover,
+    &.active {
+      background-color: $c-lynch;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.pw-trial {
+  padding-top: 5vh;
+  text-align: center;
+  background-color: $c-lynch;
+  
+  &__figure {
+    margin-top: $base-size * 6;
+    width: 100%;
+  }
+}
