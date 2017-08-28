@@ -1,15 +1,15 @@
 .pw-section {
   &--layers {
-		background: url(../images/capas-mobile.png) no-repeat -100px 30px $c-pollo-blue;
+		background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat -100px 30px $c-pollo-blue;
 		background-size: auto 100%;
 
 		@include bp(xsmall-up) {
-			background: url(../images/capas-mobile.png) no-repeat -60px 30px $c-pollo-blue;
+			background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat -60px 30px $c-pollo-blue;
 			background-size: auto 100%;
 		}
 
 		@include bp(min, $breakpoint-small-default) {
-			background: url(../images/capas-mobile.png) no-repeat 0 30px $c-pollo-blue;
+			background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat 0 30px $c-pollo-blue;
 			background-size: auto 100%;
 		}
 
@@ -75,12 +75,12 @@
 		@include bp(medium-up) {
 			display: inline-block;
 		}
-		
+
 		@include bp(large-up) {
 			display: none;
     }
 	}
-	
+
 	&__madein {
 		display: inline-block;
 		margin-bottom: $base-size * 2;
@@ -98,16 +98,32 @@
 
 .pw-matress-webgl {
   position: relative;
-  > canvas { 
+  &:before {
+    display: none;
+    @include bp(large-up) {
+      content: '';
+      display: block;
+      position: absolute;
+      @include size(672px, 115px);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -32px;
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/sombra_capas.png') no-repeat center center;
+
+    }
+  }
+  > canvas {
     position: relative;
     z-index: 1;
+    display: block;
+
   }
 
   &__lines {
     @include coverer;
     transform: translateY(5vh);
     z-index: 2;
-    background: url('../images/icn-line-gel.svg') no-repeat center bottom;
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-line-gel.svg') no-repeat center bottom;
     opacity: 0;
     visibility: hidden;
     transition: 350ms ease-in-out;
@@ -121,19 +137,19 @@
     &:before {
       left: 116px;
       height: 307px;
-      background: url('../images/icn-line-latex.svg') no-repeat;
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-line-latex.svg') no-repeat;
     }
     &:after {
       right: 116px;
       height: 166px;
-      background: url('../images/icn-line-pol.svg') no-repeat;
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/icn-line-pol.svg') no-repeat;
     }
 
     &.from {
       opacity: 0;
       visibility: hidden;
     transform: translateY(5vh);
-      
+
     }
     &.to {
       opacity: 1;

@@ -33,7 +33,7 @@ export default class MatressBall extends EventEmitter {
     this.domNode.appendChild(this.app.view);
 
 
-    loader.add('images/pw-matress-ball.json')
+    loader.add('//staging.luuna.mx/media/colchon-landing/pw-matress-ball.json')
       .load(() => this.render())
   }
 

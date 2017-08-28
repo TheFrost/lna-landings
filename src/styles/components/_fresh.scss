@@ -67,19 +67,19 @@
     }
     &--balance {
       &:after {
-      	background: url('../images/balance.svg') no-repeat center bottom;
+      	background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/balance.svg') no-repeat center bottom;
       	background-size: contain;
       }
     }
     &--materials {
       &:after {
-      	background: url('../images/capas.svg') no-repeat center bottom;
+      	background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas.svg') no-repeat center bottom;
       	background-size: contain;
       }
     }
     &--qualify {
       &:after {
-         background: url('../images/resenas.svg') no-repeat center bottom;
+         background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/resenas.svg') no-repeat center bottom;
       background-size: contain;
       }
     }
@@ -110,6 +110,27 @@
       @include bp(xlarge-up) {
         width: auto;
       }
+    }
+  }
+}
+
+.pw-matress-ball-webgl {
+  position: relative;
+  &__alt {
+    display: block;
+    @include center-block;
+    @include bp(large-up) {
+      display: none;
+    }
+  }
+  > canvas {
+    display: block;
+    background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/shadow-matress-ball.png') no-repeat center 96%;
+    position: relative;
+    margin-top: -15vh;
+    padding-bottom: 5vh;
+    @include bp(xlarge-up) {
+      background-position: center 90%;
     }
   }
 }

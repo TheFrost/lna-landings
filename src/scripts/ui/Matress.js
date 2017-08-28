@@ -65,10 +65,10 @@ export default class Matress extends EventEmitter {
 
   loadAssets() {
     loader.add([
-      'images/capa-mat-04.png',
-      'images/capa-mat-03.png',
-      'images/capa-mat-02.png',
-      'images/capa-mat-01.png',
+      '//staging.luuna.mx/media/colchon-landing/capa-mat-04.png',
+      '//staging.luuna.mx/media/colchon-landing/capa-mat-03.png',
+      '//staging.luuna.mx/media/colchon-landing/capa-mat-02.png',
+      '//staging.luuna.mx/media/colchon-landing/capa-mat-01.png',
     ]).load(() => this.render());
   }
 

@@ -60,7 +60,7 @@
     cursor: pointer;
     z-index: 2;
     &--matress {
-      background: url('../images/pw-video-matress.jpg') no-repeat center center;
+      background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-video-matress.jpg') no-repeat center center;
     }
     &__va {
       @include centerer;

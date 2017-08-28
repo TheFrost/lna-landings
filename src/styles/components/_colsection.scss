@@ -11,7 +11,7 @@
         background-color: $c-zircon;
 
         &--pic {
-          background: url('../images/bed-breakfast.jpg') no-repeat center center;
+          background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/bed-breakfast.jpg') no-repeat center center;
           background-size: cover;
         }
       }
@@ -23,12 +23,12 @@
         background-color: $c-pale-pink;
 
         &--pic {
-          background: url('../images/bed-dog.jpg') no-repeat center center;
+          background: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/bed-dog.jpg') no-repeat center center;
           background-size: cover;
         }
       }
     }
-  } 
+  }
 
   &__inner {
     width: 100%;
