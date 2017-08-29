@@ -1,16 +1,17 @@
 .pw-section {
   &--layers {
-		background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat -100px 30px $c-pollo-blue;
-		background-size: auto 100%;
+		background-image: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png');
+		background-repeat: no-repeat ;
+		background-position: -150px 70px; 
+		background-color: $c-pollo-blue;
+		background-size: auto calc(100% - #{$base-size * 2});
 
 		@include bp(xsmall-up) {
-			background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat -60px 30px $c-pollo-blue;
-			background-size: auto 100%;
+			background-position: -100px 70px; 
 		}
 
 		@include bp(min, $breakpoint-small-default) {
-			background: url(//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/capas-mobile.png) no-repeat 0 30px $c-pollo-blue;
-			background-size: auto 100%;
+			background-position: 0 50px; 
 		}
 
 		@include bp(medium-up) {
