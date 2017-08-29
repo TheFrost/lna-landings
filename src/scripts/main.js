@@ -1,3 +1,5 @@
+const scroll = require('scroll');
+
 import tabs from 'tabs';
 import browser from './utils/browser';
 import Reveal from './ui/reveal';
@@ -23,6 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!specs) { return; }
   tabs(specs);
   const videoPlayer = new VideoPlayer();
+
+  const scrollButton = document.querySelector('#pw-buy-scroll');
+  scrollButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    scroll.top(document.body, 0 ,{ duration: 250 });
+  });
 });
 
 
