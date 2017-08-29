@@ -8,6 +8,16 @@
       }
     }
   }
+
+  &--matress {
+    @include bp(xlarge-up) {
+      .pw-section__inner {
+        padding: 64px 0 0;
+      }
+      min-height: 50vh;
+      padding-bottom: 0;
+    }
+  }
 }
 
 .pw-features {
