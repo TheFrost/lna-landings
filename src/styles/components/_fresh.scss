@@ -124,6 +124,85 @@
   }
 }
 
+$duration: 60s;
+$height: 10%;
+
+.pw-sky {
+  @include coverer;
+  height: 50vh;
+  overflow: hidden;
+  animation: fadeIn 3s ease-out;
+  user-select: none;
+  z-index: 0;
+
+  &__cloud {
+    position: absolute;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 70px;
+    animation-duration: $duration;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-name: float, fadeFloat;
+    z-index: 1;
+    &--foreground {
+      height: $height;
+      min-height: 20px;
+      z-index: 3;
+      background-image: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-cloud.svg');
+    }
+    &--background {
+      height: $height / 1.1;
+      min-height: 8px;
+      animation-duration: $duration * 1.75;
+      background-image: url('//d3l9z56djv003z.cloudfront.net/static/pillow-landing/images/pw-cloud-light.svg');
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1 }
+}
+
+@keyframes float {
+  from { transform: translateX(100%) translateZ(0); }
+  to { transform: translateX(-50%) translateZ(0); }
+}
+
+@keyframes fadeFloat {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: 1; }
+}
+
+@for $i from 10 through 1 {
+  $delay: (($duration / 6.5 ) * -1);
+  $top: ($i * 6) * 1%;
+
+  .pw-sky__cloud {
+    &:nth-child(#{$i}) {
+      animation-delay: $delay * $i;
+      top: $top;
+    }
+
+    &--foreground {
+      &:nth-child(#{$i}) {
+        animation-duration: ($duration - ($i * 4));
+        height: ($height + ($i * 2.5));
+      }
+    }
+
+    &--background {
+      &:nth-child(#{$i}) {
+        animation-duration: ($duration * 1.25 - ($i * 4));
+        height: (($height / 1.1) - ($i * 1.25))
+      }
+    }
+  }
+}
+
 .pw-matress-ball-webgl {
   position: relative;
   &__alt {
